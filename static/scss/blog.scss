@@ -1,0 +1,26 @@
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+}
+body {
+    margin: 0;
+    background-color: #f7f2f2;
+}
+.text-center {
+    text-align: center;
+}
+.page-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+a{
+    text-decoration: none;
+    &:hover {
+        color: #0085A1;
+        background-color: #eee;
+    }
+}
