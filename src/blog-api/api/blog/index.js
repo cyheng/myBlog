@@ -14,7 +14,7 @@ function comments_list_get(opts) {
 function category_get(opts) {
   return instance({
     method: 'get',
-    url:  '/api/category',
+    url:  '/category',
     opts: opts
   });
 }
@@ -23,7 +23,7 @@ function category_get(opts) {
 function api_archives_get(opts) {
   return instance({
     method: 'get',
-    url:  '/api/archives',
+    url:  '/archives',
     opts: opts
   });
 }
@@ -32,7 +32,7 @@ function api_archives_get(opts) {
 function api_articles_get(opts) {
   return instance({
     method: 'get',
-    url:  '/api/articles',
+    url:  '/articles',
     opts: opts
   });
 }
@@ -41,7 +41,7 @@ function api_articles_get(opts) {
 function api_article_id_get(opts) {
   return instance({
     method: 'get',
-    url: convertRESTAPI('/api/articles/{id}', opts),
+    url: convertRESTAPI('/articles/{id}', opts),
     opts: opts
   });
 }
@@ -49,7 +49,7 @@ function api_article_id_get(opts) {
 function api_about_get(opts){
   return instance({
     method: 'get',
-    url:  '/api/about',
+    url:  '/about',
     opts: opts
   });
 }
