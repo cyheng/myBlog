@@ -26,7 +26,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  background: url(../../static/img/header.jpg) center center no-repeat;
+  background: url(../../static/img/header.png) center center no-repeat;
   background-size: cover;
   text-align: center;
   box-sizing: border-box;
