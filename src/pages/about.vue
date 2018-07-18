@@ -18,11 +18,11 @@
 <script>
 import VueMarkdown from 'vue-markdown'
 import { api_about_get } from '@/blog-api/api/blog/index'
-
+ import { Row,Col } from 'iview';
 export default {
   name: 'about',
   components: {
-    VueMarkdown
+    VueMarkdown,Row,Col
   },
   async mounted() {
     const { data } = await api_about_get()

@@ -24,7 +24,9 @@
   <Row type="flex" justify="center" class="caterogty-list">
   <h4>分类</h4>
     <ul class="nav">
-      <div v-if="isLoading" class="spin-container"><Spin size="large" fix></Spin></div>
+      <div v-if="isLoading" class="spin-container">
+        <Spin size="large" fix></Spin>
+      </div>
       <li v-else v-for="i in list" :key="i.id">
           <router-link :to="{ name: 'index', query:  { category: i.id }}" class="tags ">
                   {{i.name}}
@@ -36,10 +38,14 @@
 </template>
 
 <script>
-
+ import { ButtonGroup,Row,Button,Tooltip,Spin } from 'iview';
 import { category_get } from "@/blog-api/api/blog/index";
 import Clipboard from 'clipboard';  
 export default {
+  name:'blog-sidebar',
+  components:{
+    ButtonGroup,Row,Button,Tooltip,Spin
+  },
   data() {
     return {
       list: [],

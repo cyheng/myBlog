@@ -21,13 +21,13 @@
 </div>
 </template>
 <script>
-/**
- * TODO: loading 状态添加
- */
+ import { TimelineItem,Timeline } from 'iview';
 import { api_archives_get } from "@/blog-api/api/blog/index";
 export default {
   name: "archives",
-  components: {},
+  components: {
+    TimelineItem,Timeline 
+    },
   data() {
     return {
       archives: {},

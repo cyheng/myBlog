@@ -11,12 +11,12 @@
 
 import BlogFooter from "@/components/footer"
 import BlogHeader from "@/components/header"
- 
+ import { BackTop } from 'iview';
 export default {
   components: {
     BlogHeader,
     BlogFooter,
-     
+     BackTop
   },
   
 }

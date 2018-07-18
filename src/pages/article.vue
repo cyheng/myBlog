@@ -22,7 +22,7 @@
                             </span>
                         </div>
                     </header>
-                    <VueMarkdown :source="article.content" class="markdown-body"
+                    <VueMarkdown  v-highlight :source="article.content" class="markdown-body"
                      :toc="toc" toc-id="toc" toc-anchor-link-symbol="" toc-class="toc-class">
                     </VueMarkdown>
                 </article>
@@ -43,15 +43,15 @@
 
 
 <script>
+ import { Row,Col,Icon,Affix } from 'iview';
 import VueMarkdown from "vue-markdown";
 import { api_article_id_get } from "@/blog-api/api/blog/index";
 import sidebar from "@/components/sidebar";
-import hljs from 'highlight.js'
-import 'highlight.js/styles/github.css'  
+
 export default {
   name: "article-detail",
   components: {
-    VueMarkdown,sidebar
+    VueMarkdown,sidebar,Row,Col,Icon,Affix
   },
   data() {
     return {
@@ -63,7 +63,7 @@ export default {
   },
   async mounted () {
     await this.getData(this.$route.params.id)
-    //自定义指令无效，不知道为什么
+    //文章md渲染 自定义指令v-highlight无效
     let blocks = document.querySelectorAll('pre code');
     blocks.forEach((block) => {
         hljs.highlightBlock(block)

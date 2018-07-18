@@ -43,13 +43,13 @@
 <script>
 import sidebar from "@/components/sidebar";
 import VueMarkdown from 'vue-markdown'
-
+ import { Row,Col,Affix,Spin,Page,Icon,Button } from 'iview';
 import { api_articles_get } from "@/blog-api/api/blog/index";
 
 export default {
   name: "index",
   components: {
-    sidebar,VueMarkdown
+    sidebar,VueMarkdown, Row,Col,Affix,Spin,Page,Icon,Button
   },
   data() {
     return {

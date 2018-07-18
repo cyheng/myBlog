@@ -5,7 +5,7 @@
   <router-link to="/" class="nav-links" style="float:left">DORARO</router-link>
   <router-link to="/" class="nav-links">主页</router-link>
   <router-link to="/archives" class="nav-links">归档</router-link>
-  <router-link to="/about" class="nav-links">关于</router-link><!--TODO: 修改路由位置-->
+  <router-link to="/about" class="nav-links">关于</router-link> 
 <a class="brand nav-links"href="https://github.com/cyheng">
     <Icon type="social-github"></Icon></a>
 </nav>
@@ -19,8 +19,13 @@
 </template>
 
 <script>
+ import { Icon } from 'iview';
+
 export default {
-  name: "blog-head"
+  name: "blog-head",
+  components:{
+    Icon
+  }
 };
 </script>
 
