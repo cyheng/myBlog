@@ -13,7 +13,7 @@
     <div class="header-text">
       <h3>DORARO_BLOG</h3>
       <hr>
-      <span>{{ $route.params.title }}</span>
+      <span>{{ this.$route.meta.title }}</span>
     </div>
   </header>
 </template>

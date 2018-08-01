@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import stores from './store/index'
+
 
 import {LoadingBar,Message} from 'iview'
 import 'iview/dist/styles/iview.css'
@@ -35,7 +35,6 @@ router.afterEach(route => {
 new Vue({
   el: '#app',
   router,
-  store:stores,
   template: '<App/>',
   components: { App }
 })
