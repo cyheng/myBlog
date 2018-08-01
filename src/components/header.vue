@@ -1,76 +1,97 @@
 <template lang="html">
-<div style="min-height: 350px">
-  <header class="header">
-<nav>
-  <router-link to="/" class="nav-links" style="float:left">DORARO</router-link>
-  <router-link to="/" class="nav-links">主页</router-link>
-  <router-link to="/archives" class="nav-links">归档</router-link>
-  <router-link to="/about" class="nav-links">关于</router-link> 
-<a class="brand nav-links"href="https://github.com/cyheng">
-    <Icon type="social-github"></Icon></a>
-</nav>
-    <div class="site-heading">
-      <h3>RARO_BLOG</h3>
+
+<header class="header-wrapper">
+  <nav class="nav-wrapper">
+    <router-link class="nav-link" v-for="(item,index) in links" :key="index"
+    :to="item.path">
+    {{item.name}}
+    </router-link>
+    <a class="nav-link" href="https://github.com/cyheng">
+      <Icon type="social-github" />
+    </a>
+  </nav>
+    <div class="header-text">
+      <h3>DORARO_BLOG</h3>
       <hr>
-      <span>{{ $route.meta.title }}</span>
+      <span>{{ $route.params.title }}</span>
     </div>
   </header>
-</div>
 </template>
 
 <script>
- import { Icon } from 'iview';
-
+import { Icon } from "iview";
 export default {
-  name: "blog-head",
+  name: 'blog-head',
   components:{
     Icon
+  },
+  data(){
+    return {
+      links:[
+        {path:'/',name:'DORARO'},
+        {path:'/',name:'主页'},
+        {path:'/archives',name:'归档'},
+        {path:'/about',name:'关于'},
+      ],
+      
+    }
   }
-};
+}
 </script>
 
 <style lang="scss" scoped>
-.header {
+.header-wrapper{
+  position: relative;
+  min-height: 350px;
   background: url(../../static/img/header.png) center center no-repeat;
   background-size: cover;
-  text-align: center;
-  box-sizing: border-box;
-  display: block;
-  .brand {
-    float: right;
-
-    &:hover {
-      background-color: rgba(0, 0, 0, 0.3);
-    }
-    img {
-      max-width: 25px;
-      max-height: 25px;
-    }
-  }
-  nav {
-    background-color: rgba(0, 0, 0, 0.3);
-    .nav-links {
-      font-size: 16px;
-      display: inline-block;
-      color: #fff;
-      padding: 30px 20px 25px;
-      margin-right: 10px;
-      margin-top: -5px;
-      text-transform: uppercase;
-      transition: all ease-in-out 0.3s;
-      &:hover {
+  margin-bottom: 20px;
+}
+.nav-wrapper{
+  margin-bottom: 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  position: relative;
+  line-height: 25px;
+  background-color:  rgba(0, 0, 0, 0.3);
+  .nav-link{
+    opacity: 0.9;
+    color:#fff;
+    min-height: 60px;
+    padding: 30px 20px 25px;
+     transition: all ease-in-out 0.3s;
+     &:hover {
         background-color: #162438;
-      }
+        
     }
   }
-
-  .site-heading {
+  .nav-link:first-child{
+     position: absolute;
+     left: 0;
+     @media screen and (max-width: 600px) {
+        position: relative;
+     }
+  }
+  .nav-link:last-child{
+     position: absolute;
+     right: 0;
+    @media screen and (max-width: 600px) {
+        position: relative;
+     }
+  }
+}
+.header-text {
+    text-align: center;
     padding-top: 50px;
     color: #fff;
     span {
       padding-bottom: 100px;
       display: block;
       font-size: 24px;
+      line-height: 33px;
       font-weight: 300;
       margin: 10px 0 0;
     }
@@ -81,5 +102,4 @@ export default {
       border: 2px solid;
     }
   }
-}
 </style>
