@@ -4,14 +4,14 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import stores from './store/index'
-import 'vue2-animate/dist/vue2-animate.min.css'
-import {LoadingBar} from 'iview'
+
+import {LoadingBar,Message} from 'iview'
 import 'iview/dist/styles/iview.css'
 
 import Highlight from './highlight.js'
 Vue.use(Highlight)
 
-
+Vue.prototype.$Message = Message 
 Vue.config.productionTip = false
 
 /**
